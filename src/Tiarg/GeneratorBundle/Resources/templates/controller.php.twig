@@ -1,0 +1,40 @@
+<?php
+
+namespace {{ Namespace }}\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
+use JMS\SecurityExtraBundle\Annotation\PreAuthorize;
+use JMS\DiExtraBundle\Annotation\Inject;
+use JMS\Serializer\SerializationContext;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+
+use {{ Bundle['Name'] }}\Entity\{{ Entity['Name'] }};
+
+/**
+ * @Route("/api/{{ Entity['Name'] | lower }}")
+ */
+class {{ Entity['Name'] }}Controller extends Controller
+{
+  /** @Inject("em") */
+  private $em;
+
+  /** @Inject("serializer") */
+  private $serializer;
+
+  {% for action in Entity['Actions'] %}
+
+ {% include 'actions/' ~ action ~ '.php.twig' %}
+
+  {% endfor %}
+
+}
