@@ -11,6 +11,12 @@
             "app/AppCache.php"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Lube/JsonSchemaBundle"
+        }
+    ],
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.8.*",
@@ -24,7 +30,7 @@
         "jms/serializer-bundle": "^1.1",
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "nelmio/api-doc-bundle": "^2.12",
-        "tiarg/generator-bundle": "dev-master"
+        "tiarg/generator-bundle": "@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

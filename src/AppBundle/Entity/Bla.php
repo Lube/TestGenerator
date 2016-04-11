@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Knp\JsonSchemaBundle\Annotations as Json;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -17,6 +18,7 @@ class Bla
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      * @Groups({"basic"}) 
+     * @Json\Ignore
      */
     private $id;
 

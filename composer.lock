@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c464d5990bd1fc8c95abfacda205024",
-    "content-hash": "81df72e54dd0b410634fbd220dc07b77",
+    "hash": "e98d2f97ba273aa375d68167b8536115",
+    "content-hash": "836c58a5d770ae37c3c1190aaf7a8415",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -905,6 +905,49 @@
             "time": "2016-01-05 21:34:58"
         },
         {
+            "name": "hadesarchitect/json-schema-bundle",
+            "version": "0.2.1",
+            "target-dir": "HadesArchitect/JsonSchemaBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Lube/JsonSchemaBundle.git",
+                "reference": "67c50dbfbbb89ae48cc788672ddc311d2bb01319"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Lube/JsonSchemaBundle/zipball/67c50dbfbbb89ae48cc788672ddc311d2bb01319",
+                "reference": "67c50dbfbbb89ae48cc788672ddc311d2bb01319",
+                "shasum": ""
+            },
+            "require": {
+                "justinrainbow/json-schema": "<2",
+                "symfony/framework-bundle": "~2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "HadesArchitect\\JsonSchemaBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Luberriaga",
+                    "email": "sebastianlube@gmail.com"
+                }
+            ],
+            "description": "Symfony2 bundle for Justin Rainbow's json-schema library.",
+            "support": {
+                "source": "https://github.com/Lube/JsonSchemaBundle/tree/0.2.1"
+            },
+            "time": "2016-04-11 03:27:58"
+        },
+        {
             "name": "incenteev/composer-parameter-handler",
             "version": "v2.1.2",
             "source": {
@@ -1344,135 +1387,17 @@
             "time": "2016-01-25 15:43:01"
         },
         {
-            "name": "kriswallsmith/assetic",
-            "version": "v1.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/9928f7c4ad98b234e3559d1049abd13387f86db5",
-                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1",
-                "symfony/process": "~2.1|~3.0"
-            },
-            "conflict": {
-                "twig/twig": "<1.23"
-            },
-            "require-dev": {
-                "cssmin/cssmin": "3.0.1",
-                "joliclic/javascript-packer": "1.1",
-                "kamicane/packager": "1.0",
-                "leafo/lessphp": "^0.3.7",
-                "leafo/scssphp": "~0.1",
-                "mrclay/minify": "~2.2",
-                "patchwork/jsqueeze": "~1.0|~2.0",
-                "phpunit/phpunit": "~4.8",
-                "psr/log": "~1.0",
-                "ptachoire/cssembed": "~1.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "twig/twig": "~1.8|~2.0"
-            },
-            "suggest": {
-                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
-                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
-                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
-                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
-                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
-                "twig/twig": "Assetic provides the integration with the Twig templating engine"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Assetic": "src/"
-                },
-                "files": [
-                    "src/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Asset Management for PHP",
-            "homepage": "https://github.com/kriswallsmith/assetic",
-            "keywords": [
-                "assets",
-                "compression",
-                "minification"
-            ],
-            "time": "2015-11-12 13:51:40"
-        },
-        {
-            "name": "lube/json-schema-bundle",
-            "version": "0.2.1",
-            "target-dir": "HadesArchitect/JsonSchemaBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Lube/JsonSchemaBundle.git",
-                "reference": "67c50dbfbbb89ae48cc788672ddc311d2bb01319"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Lube/JsonSchemaBundle/zipball/67c50dbfbbb89ae48cc788672ddc311d2bb01319",
-                "reference": "67c50dbfbbb89ae48cc788672ddc311d2bb01319",
-                "shasum": ""
-            },
-            "require": {
-                "justinrainbow/json-schema": "<2",
-                "symfony/framework-bundle": "~2.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~3.7"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "HadesArchitect\\JsonSchemaBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Luberriaga",
-                    "email": "sebastianlube@gmail.com"
-                }
-            ],
-            "description": "Symfony2 bundle for Justin Rainbow's json-schema library.",
-            "time": "2016-04-11 03:27:58"
-        },
-        {
             "name": "lube/knp-json-schema-bundle",
-            "version": "1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lube/KnpJsonSchemaBundle.git",
-                "reference": "a3efc9a4ea06a12d5717376af0d636a56fdd0f4e"
+                "reference": "a685c32677bd62ce4b23e7cc9b3c839fbfed100b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lube/KnpJsonSchemaBundle/zipball/a3efc9a4ea06a12d5717376af0d636a56fdd0f4e",
-                "reference": "a3efc9a4ea06a12d5717376af0d636a56fdd0f4e",
+                "url": "https://api.github.com/repos/Lube/KnpJsonSchemaBundle/zipball/a685c32677bd62ce4b23e7cc9b3c839fbfed100b",
+                "reference": "a685c32677bd62ce4b23e7cc9b3c839fbfed100b",
                 "shasum": ""
             },
             "require": {
@@ -1504,7 +1429,7 @@
                 }
             ],
             "description": "A bundle to generate json schema based on various metadata",
-            "time": "2016-04-11 02:50:18"
+            "time": "2016-04-11 14:18:04"
         },
         {
             "name": "michelf/php-markdown",
@@ -2179,76 +2104,6 @@
                 "mailer"
             ],
             "time": "2015-06-06 14:19:39"
-        },
-        {
-            "name": "symfony/assetic-bundle",
-            "version": "v2.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/assetic-bundle.git",
-                "reference": "aa5b4f8b712f38745928fa845ddb73300bb2af6d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/assetic-bundle/zipball/aa5b4f8b712f38745928fa845ddb73300bb2af6d",
-                "reference": "aa5b4f8b712f38745928fa845ddb73300bb2af6d",
-                "shasum": ""
-            },
-            "require": {
-                "kriswallsmith/assetic": "~1.3",
-                "php": ">=5.3.0",
-                "symfony/console": "~2.3|~3.0",
-                "symfony/dependency-injection": "~2.3|~3.0",
-                "symfony/framework-bundle": "~2.3|~3.0",
-                "symfony/yaml": "~2.3|~3.0"
-            },
-            "conflict": {
-                "kriswallsmith/spork": "<=0.2",
-                "twig/twig": "<1.20"
-            },
-            "require-dev": {
-                "kriswallsmith/spork": "~0.3",
-                "patchwork/jsqueeze": "~1.0",
-                "symfony/class-loader": "~2.3|~3.0",
-                "symfony/css-selector": "~2.3|~3.0",
-                "symfony/dom-crawler": "~2.3|~3.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "symfony/twig-bundle": "~2.3|~3.0"
-            },
-            "suggest": {
-                "kriswallsmith/spork": "to be able to dump assets in parallel",
-                "symfony/twig-bundle": "to use the Twig integration"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Bundle\\AsseticBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kris Wallsmith",
-                    "email": "kris.wallsmith@gmail.com",
-                    "homepage": "http://kriswallsmith.net/"
-                }
-            ],
-            "description": "Integrates Assetic into Symfony2",
-            "homepage": "https://github.com/symfony/AsseticBundle",
-            "keywords": [
-                "assets",
-                "compression",
-                "minification"
-            ],
-            "time": "2015-12-28 13:12:39"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -3015,28 +2870,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lube/tiarg_generator.git",
-                "reference": "cdada318cdf07927f6d0df5b103f95265a7b71e5"
+                "reference": "1793cdcd8f856047601920d4c59099fe4f035d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lube/tiarg_generator/zipball/cdada318cdf07927f6d0df5b103f95265a7b71e5",
-                "reference": "cdada318cdf07927f6d0df5b103f95265a7b71e5",
+                "url": "https://api.github.com/repos/Lube/tiarg_generator/zipball/1793cdcd8f856047601920d4c59099fe4f035d9f",
+                "reference": "1793cdcd8f856047601920d4c59099fe4f035d9f",
                 "shasum": ""
             },
             "require": {
-                "doctrine/doctrine-bundle": "~1.4",
-                "doctrine/orm": "^2.4.8",
+                "hadesarchitect/json-schema-bundle": "@dev",
                 "jms/serializer-bundle": "^1.0",
-                "lube/json-schema-bundle": "0.2.*",
                 "lube/knp-json-schema-bundle": "1.2.*",
-                "nelmio/api-doc-bundle": "^2.10",
-                "php": ">=5.3.9",
-                "sensio/distribution-bundle": "~5.0",
-                "sensio/framework-extra-bundle": "^3.0.2",
-                "symfony/assetic-bundle": "~2.3",
-                "symfony/monolog-bundle": "~2.4",
-                "symfony/swiftmailer-bundle": "~2.3",
-                "symfony/symfony": "2.8.*"
+                "nelmio/api-doc-bundle": "^2.10"
             },
             "type": "library",
             "autoload": {
@@ -3064,7 +2910,7 @@
                 "json",
                 "rest"
             ],
-            "time": "2016-04-11 03:30:18"
+            "time": "2016-04-11 19:54:41"
         },
         {
             "name": "twig/twig",

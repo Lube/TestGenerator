@@ -4,15 +4,12 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "http://example.org",
     "properties": {
-        "id": {
-            "title": "Id"
-        },
         "nombre": {
             "title": "Nombre"
         }
     },
+    "additionalProperties": false,
     "required": [
-        "id",
         "nombre"
     ]
 }

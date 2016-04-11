@@ -39,10 +39,29 @@ class BlaController extends Controller
    */
   public function cgetAction(Request $request) 
   {
+
       $offset = $request->query->get('offset',    null);
       $limit  = $request->query->get('limit',     null);
       $filter = json_decode($request->query->get('filter_by', '[]'), true);
       $order  = $request->query->get('order_by',  null);
+
+      if (count($filter) > 0)
+      {
+        $validator = $this->get('hades.json_schema.validator');
+        $schema = $this->get('hades.json_schema.uri_retriever')->retrieve('file:///home/dev/Dev/PH/Symf/Bundles/TestGenerator/src/AppBundle/Schema/Filter/BlaSchema.json');
+
+        if (!$validator->isValid($filter, $schema)) 
+        {
+            $errors = $validator->getErrors();
+
+            foreach ($errors as $error) 
+            {
+              $errorMessages[] = (string)$error;
+            }
+
+            return new JsonResponse($errorMessages, 400);
+        }
+      }
 
       $blas  = $this->em->getRepository('AppBundle:Bla')->findBy($filter, $order, $limit, $offset);
 
@@ -82,6 +101,21 @@ class BlaController extends Controller
    */
   public function saveAction(Request $request)
   {
+    $validator = $this->get('hades.json_schema.validator');
+    $schema = $this->get('hades.json_schema.uri_retriever')->retrieve('file:///home/dev/Dev/PH/Symf/Bundles/TestGenerator/src/AppBundle/Schema/Save/BlaSchema.json');
+
+    if (!$validator->isValid(json_decode($request->getContent()), $schema)) 
+    {
+        $errors = $validator->getErrors();
+
+        foreach ($errors as $error) 
+        {
+          $errorMessages[] = (string)$error;
+        }
+
+        return new JsonResponse($errorMessages, 400);
+    }
+
     $bla = $this->serializer->deserialize($request->getContent(), 'AppBundle\Entity\Bla', 'json');
     
     $errors = $this->get('validator')->validate($bla);
@@ -127,13 +161,10 @@ class BlaController extends Controller
    */
   public function updateAction(Request $request, $bla)
   {
-
     $validator = $this->get('hades.json_schema.validator');
-    $schema = $this->get('hades.json_schema.uri_retriever')->retrieve('file:///home/lube/Dev/PHP/Symfony/test_generator/src/AppBundle//Schema/BlaSchema.json');
+    $schema = $this->get('hades.json_schema.uri_retriever')->retrieve('file:///home/dev/Dev/PH/Symf/Bundles/TestGenerator/src/AppBundle/Schema/Update/BlaSchema.json');
 
-    $json_request = $validator->isValid(json_decode($request->getContent()), $schema); 
-
-    if (!$json_request) 
+    if (!$validator->isValid(json_decode($request->getContent()), $schema)) 
     {
         $errors = $validator->getErrors();
 
