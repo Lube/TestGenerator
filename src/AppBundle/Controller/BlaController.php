@@ -41,7 +41,7 @@ class BlaController extends Controller
   {
       $offset = $request->query->get('offset',    null);
       $limit  = $request->query->get('limit',     null);
-      $filter = json_decode($request->query->get('filter_by', array()), true);
+      $filter = json_decode($request->query->get('filter_by', '[]'), true);
       $order  = $request->query->get('order_by',  null);
 
       $blas  = $this->em->getRepository('AppBundle:Bla')->findBy($filter, $order, $limit, $offset);
@@ -127,6 +127,24 @@ class BlaController extends Controller
    */
   public function updateAction(Request $request, $bla)
   {
+
+    $validator = $this->get('hades.json_schema.validator');
+    $schema = $this->get('hades.json_schema.uri_retriever')->retrieve('file:///home/lube/Dev/PHP/Symfony/test_generator/src/AppBundle//Schema/BlaSchema.json');
+
+    $json_request = $validator->isValid(json_decode($request->getContent()), $schema); 
+
+    if (!$json_request) 
+    {
+        $errors = $validator->getErrors();
+
+        foreach ($errors as $error) 
+        {
+          $errorMessages[] = (string)$error;
+        }
+
+        return new JsonResponse($errorMessages, 400);
+    }
+
     $context = new \JMS\Serializer\DeserializationContext();
     $context->attributes->set('target', $bla);
 
@@ -140,7 +158,7 @@ class BlaController extends Controller
             $errorMessages[] = $error->getMessage();
         }
 
-        return new JsonResponse($errorResponse, 400);
+        return new JsonResponse($errorMessages, 400);
     }
 
     $this->em->persist($bla);

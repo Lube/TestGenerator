@@ -21,7 +21,10 @@ class AppKernel extends Kernel
 
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-            new JMS\DiExtraBundle\JMSDiExtraBundle($this),  
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+
+            new Knp\JsonSchemaBundle\KnpJsonSchemaBundle(),
+            new HadesArchitect\JsonSchemaBundle\JsonSchemaBundle(),
 
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
