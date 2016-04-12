@@ -2870,12 +2870,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Lube/tiarg_generator.git",
-                "reference": "1793cdcd8f856047601920d4c59099fe4f035d9f"
+                "reference": "687807c634e690b31612c906bf0d71c72c2070a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lube/tiarg_generator/zipball/1793cdcd8f856047601920d4c59099fe4f035d9f",
-                "reference": "1793cdcd8f856047601920d4c59099fe4f035d9f",
+                "url": "https://api.github.com/repos/Lube/tiarg_generator/zipball/687807c634e690b31612c906bf0d71c72c2070a4",
+                "reference": "687807c634e690b31612c906bf0d71c72c2070a4",
                 "shasum": ""
             },
             "require": {
@@ -2910,7 +2910,7 @@
                 "json",
                 "rest"
             ],
-            "time": "2016-04-11 19:54:41"
+            "time": "2016-04-12 14:54:19"
         },
         {
             "name": "twig/twig",

@@ -42,15 +42,16 @@ class BlaController extends Controller
 
       $offset = $request->query->get('offset',    null);
       $limit  = $request->query->get('limit',     null);
-      $filter = json_decode($request->query->get('filter_by', '[]'), true);
+      $filterSchema = json_decode($request->query->get('filter_by', '{}'));
+      $filterArray = json_decode($request->query->get('filter_by', '{}'), true);
       $order  = $request->query->get('order_by',  null);
 
-      if (count($filter) > 0)
+      if (count($filterArray) > 0)
       {
         $validator = $this->get('hades.json_schema.validator');
         $schema = $this->get('hades.json_schema.uri_retriever')->retrieve('file:///home/dev/Dev/PH/Symf/Bundles/TestGenerator/src/AppBundle/Schema/Filter/BlaSchema.json');
 
-        if (!$validator->isValid($filter, $schema)) 
+        if (!$validator->isValid($filterSchema, $schema)) 
         {
             $errors = $validator->getErrors();
 
@@ -63,10 +64,10 @@ class BlaController extends Controller
         }
       }
 
-      $blas  = $this->em->getRepository('AppBundle:Bla')->findBy($filter, $order, $limit, $offset);
+      $blas  = $this->em->getRepository('AppBundle:Bla')->findBy((array)$filterArray, $order, $limit, $offset);
 
       $Response['data']   = json_decode($this->serializer->serialize($blas, 'json'));
-      $Response['total']  = count($this->em->getRepository('AppBundle:Bla')->findBy($filter));
+      $Response['total']  = count($this->em->getRepository('AppBundle:Bla')->findBy($filterArray));
 
       return new JsonResponse($Response);
   }

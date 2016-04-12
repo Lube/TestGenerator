@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  * @ORM\Table()
+ * @Json\Schema("bla")
  */
 class Bla
 {
@@ -23,10 +24,17 @@ class Bla
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
+     * @Assert\Type(type="string")
      * @Groups({"basic"})
      */
     private $nombre;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Ble", mappedBy="mi_bla", cascade={"merge"})
+     * @Groups({"basic"})
+     */
+    private $mis_ble;
 
  
     public function __construct($nombre)
